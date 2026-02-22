@@ -2,12 +2,14 @@ UIC Campus Navigation Tool
 
 This project is a C++ campus navigation tool that models the University of Illinois Chicago campus as a weighted graph using OpenStreetMap data and computes shortest walking paths between buildings with Dijkstra’s algorithm.
 
+
 Features:
 
 
 -Parses OpenStreetMap JSON files to load buildings, waypoints, and walkways, then constructs an adjacency‑list graph to model the campus map as a weighted network.
 
 -Implements a generic directed, weighted graph class and uses Dijkstra’s algorithm to find shortest paths between buildings while avoiding restricted nodes such as other buildings.
+
 
 Provides both:
 
@@ -16,8 +18,8 @@ Provides both:
 
 -A local web server for visualizing the computed routes on a campus map.
 
-Technologies Used:
 
+Technologies Used:
 
 -C++
 
@@ -29,8 +31,8 @@ Technologies Used:
 
 -Google Test / GMock for unit tests
 
-Project Structure:
 
+Project Structure:
 
 -graph.h – Generic adjacency‑list graph implementation (vertices, edges, neighbors, counts).
 
