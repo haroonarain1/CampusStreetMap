@@ -1,54 +1,40 @@
-UIC Campus Navigation Tool
+# UIC Campus Navigation Tool
 
-This project is a C++ campus navigation tool that models the University of Illinois Chicago campus as a weighted graph using OpenStreetMap data and computes shortest walking paths between buildings with Dijkstra’s algorithm.
+A C++ application that models the University of Illinois Chicago campus as a directed, weighted graph and computes shortest walking paths between buildings using Dijkstra’s algorithm.
 
+## Overview
 
-Features:
+This project converts real OpenStreetMap (OSM) data into a graph representation of the UIC campus, enabling efficient route computation and visualization while handling constraints such as restricted nodes.
 
+## Features
 
--Parses OpenStreetMap JSON files to load buildings, waypoints, and walkways, then constructs an adjacency‑list graph to model the campus map as a weighted network.
+- Builds an adjacency-list graph from OpenStreetMap JSON data (buildings, waypoints, footways)
+- Implements Dijkstra’s algorithm for shortest path routing between locations
+- Supports avoidance of restricted nodes (e.g., buildings)
+- Provides:
+  - Console interface for selecting buildings and viewing routes
+  - Local web server for visualizing paths on a campus map
 
--Implements a generic directed, weighted graph class and uses Dijkstra’s algorithm to find shortest paths between buildings while avoiding restricted nodes such as other buildings.
+## Technologies
 
+- C++
+- nlohmann::json (JSON parsing)
+- OpenStreetMap (OSM) data
+- Google Test / Google Mock
+- Unix / Makefile build system
 
-Provides both:
+## Project Structure
 
+- `graph.h` – Generic adjacency-list graph implementation
+- `application.cpp` – Graph construction, Dijkstra’s algorithm, and application logic
+- `dist.h / dist.cpp` – Geographic coordinate utilities and distance calculations
+- `*.json` – Campus datasets (sample and full OSM data)
+- `tests/` – Unit tests using Google Test
 
--A console interface for selecting buildings and viewing paths and distances.
+## Skills Demonstrated
 
--A local web server for visualizing the computed routes on a campus map.
-
-
-Technologies Used:
-
--C++
-
--nlohmann::json for parsing OSM JSON files
-
-​-OpenStreetMap campus data (buildings, waypoints, footways)
-
--Unix/Makefile build system
-
--Google Test / GMock for unit tests
-
-
-Project Structure:
-
--graph.h – Generic adjacency‑list graph implementation (vertices, edges, neighbors, counts).
-
--application.cpp – buildGraph (loads OSM JSON into the graph) and dijkstra (shortest‑path algorithm), plus console application logic.
-
--dist.h / dist.cpp – Utilities for geographic coordinates and distance calculations.
-
--small_buildings.json, uic-fa25.osm.json – Sample and full campus datasets in JSON format.
-
--tests/ – Google Test–based unit tests for the graph, data loading, and Dijkstra.
-
-Skills Demonstrated:
-
-
--Graph data structures and shortest‑path algorithms (Dijkstra).
-
--Parsing and processing real‑world OpenStreetMap data in JSON format.
-
--Memory‑safe C++ programming with unit testing and Unix build tooling.
+- Graph data structures and shortest-path algorithms
+- Real-world geospatial data parsing and processing
+- Modular C++ design with separation of concerns
+- Unit testing and software validation
+- Unix-based build system (Makefile)
